@@ -6,7 +6,8 @@ const GitHub = new function() {
   }
 }
 
-window.addEventListener("load", function() {
+$(document).ready(function() {
+  setPageLastUpdated();
   for (let div of document.getElementsByClassName("github-repo")) {
     var repo = div.dataset.repo;
     if (repo == null || repo == "null") {
@@ -57,4 +58,13 @@ function setDiv(div, url, numStars, lastUpdatedString) {
   }
   //updated
   div.getElementsByClassName("github-updated")[0].innerHTML = lastUpdatedString;
+}
+
+function setPageLastUpdated() {
+  //updates the footer dynamically
+  var div = document.getElementById("timestamp");
+  GitHub.getRepo("chenvictor/chenvictor.github.io", function(data) {
+    var updated = new Date(data["pushed_at"]);
+    div.innerHTML = MONTHS[updated.getMonth()] + " " + updated.getFullYear();
+  });
 }
