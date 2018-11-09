@@ -23,7 +23,57 @@
     <link href="css/stylish-portfolio.min.css" rel="stylesheet">
 
     <style>
+      /* entire container, keeps perspective */
+      .flip-container {
+        perspective: 500px;
+      }
+      /* flip the pane when hovered */
+      .flip-container:hover .flipper, .flip-container.hover .flipper {
+        transform: rotateY(180deg);
+      }
 
+      .flip-container {
+        width: auto;
+        display: block;
+      }
+
+        /* flip speed goes here */
+      .flipper {
+        max-width: 530px;
+        transition: 0.6s;
+        transform-style: preserve-3d;
+        position: relative;
+      }
+
+      /* hide back of pane during swap */
+      .front, .back {
+        backface-visibility: hidden;
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 100%;
+      }
+
+      /* front pane, placed above back */
+      .front {
+        z-index: 2;
+        /* for firefox 31 */
+        transform: rotateY(0deg);
+      }
+
+      /* back, initially hidden pane */
+      .back {
+        transform: rotateY(180deg);
+        background-color: #CCC;
+        height: 100%;
+        position: absolute;
+      }
+
+      @media (min-width: 992px) {
+        .flipper {
+          max-width: none;
+        }
+      }
     </style>
   </head>
 
@@ -98,61 +148,69 @@
 
           <div class="container">
             <div class="row no-gutters">
+
               <div class="col-lg-6">
-                <a class="portfolio-item" href="#">
-              <span class="caption">
-                <span class="caption-content">
-                  <h2>Stationary</h2>
-                  <p class="mb-0">A yellow pencil with envelopes on a clean, blue backdrop!</p>
-                </span>
-              </span>
-                  <img class="img-fluid" src="img/portfolio-1.jpg" alt="">
-                </a>
+                <div class="flip-container">
+                  <div class="flipper flex-grow">
+                    <!-- front content -->
+                    <div class="front">
+                    <img class="img-fluid" src="img/portfolio-4.jpg" alt="">
+                    </div>
+                    <!-- back content -->
+                    <span class="back caption pl-5 pr-5 pt-2">
+                      <span class="caption-content">
+                        <h2>Workspace</h2>
+                        <p class="mb-0">A yellow workspace with some scissors, pencils, and other objects.</p>
+                      </span>
+                    </span>
+                  </div>
+                </div>
               </div>
+
               <div class="col-lg-6">
-                <a class="portfolio-item" href="#">
-              <span class="caption">
-                <span class="caption-content">
-                  <h2>Ice Cream</h2>
-                  <p class="mb-0">A dark blue background with a colored pencil, a clip, and a tiny ice cream cone!</p>
-                </span>
-              </span>
-                  <img class="img-fluid" src="img/portfolio-2.jpg" alt="">
-                </a>
+                <div class="flip-container">
+                  <div class="flipper flex-grow">
+                    <!-- front content -->
+                    <div class="front">
+                      <!--<h2 style="position: absolute; height: 100%; width:100%; text-align: center;">-->
+                      <!--Header that is super long to overflow-->
+                      <!--</h2>-->
+                      <img class="img-fluid" src="img/portfolio-4.jpg" alt="">
+                    </div>
+                    <!-- back content -->
+                    <span class="back caption pl-5 pr-5 pt-2">
+                      <span class="caption-content">
+                        <h2>Workspace</h2>
+                        <p class="mb-0">A yellow workspace with some scissors, pencils, and other objects.</p>
+                      </span>
+                    </span>
+                  </div>
+                </div>
               </div>
+
               <div class="col-lg-6">
-                <a class="portfolio-item" href="#">
-              <span class="caption">
-                <span class="caption-content">
-                  <h2>Strawberries</h2>
-                  <p class="mb-0">Strawberries are such a tasty snack, especially with a little sugar on top!</p>
-                </span>
-              </span>
-                  <img class="img-fluid" src="img/portfolio-3.jpg" alt="">
-                </a>
+                <div class="flip-container">
+                  <div class="flipper flex-grow">
+                    <!-- front content -->
+                    <div class="front">
+                      <!--<h2 style="position: absolute; height: 100%; width:100%; text-align: center;">-->
+                      <!--Header that is super long to overflow-->
+                      <!--</h2>-->
+                      <img class="img-fluid" src="img/portfolio-4.jpg" alt="">
+                    </div>
+                    <!-- back content -->
+                    <span class="back caption pl-5 pr-5 pt-2">
+                      <span class="caption-content">
+                        <h2>Workspace</h2>
+                        <p class="mb-0">A yellow workspace with some scissors, pencils, and other objects.</p>
+                      </span>
+                    </span>
+                  </div>
+                </div>
               </div>
-              <div class="col-lg-6">
-                <a class="portfolio-item" href="#">
-              <span class="caption">
-                <span class="caption-content">
-                  <h2>Workspace</h2>
-                  <p class="mb-0">A yellow workspace with some scissors, pencils, and other objects.</p>
-                </span>
-              </span>
-                  <img class="img-fluid" src="img/portfolio-4.jpg" alt="">
-                </a>
-              </div>
-              <div class="col-lg-6">
-                <a class="portfolio-item" href="#">
-              <span class="caption">
-                <span class="caption-content">
-                  <h2>Workspace</h2>
-                  <p class="mb-0">A yellow workspace with some scissors, pencils, and other objects.</p>
-                </span>
-              </span>
-                  <img class="img-fluid" src="img/portfolio-4.jpg" alt="">
-                </a>
-              </div>
+
+
+
             </div>
           </div>
 
