@@ -8,71 +8,29 @@
     <meta name="description" content="My personal website">
     <meta name="author" content="Victor Chen">
 
-    <title>Resume - Start Bootstrap Theme</title>
+    <title>Victor Chen</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+          crossorigin="anonymous">
 
-    <!-- Custom fonts for this template -->
+    <!-- Custom fonts -->
     <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet">
-    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+          integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+          crossorigin="anonymous">
 
-    <!-- Custom styles for this template -->
+    <!-- Custom stylese -->
     <link href="css/resume.min.css" rel="stylesheet">
     <link href="css/stylish-portfolio.min.css" rel="stylesheet">
+    <link href="css/flipper.min.css" rel="stylesheet">
 
     <style>
-      /* entire container, keeps perspective */
-      .flip-container {
-        perspective: 500px;
-      }
-      /* flip the pane when hovered */
-      .flip-container:hover .flipper, .flip-container.hover .flipper {
-        transform: rotateY(180deg);
-      }
-
-      .flip-container {
-        width: auto;
-        display: block;
-      }
-
-        /* flip speed goes here */
-      .flipper {
-        max-width: 530px;
-        transition: 0.6s;
-        transform-style: preserve-3d;
-        position: relative;
-      }
-
-      /* hide back of pane during swap */
-      .front, .back {
-        backface-visibility: hidden;
-        position: relative;
-        top: 0;
-        left: 0;
-        width: 100%;
-      }
-
-      /* front pane, placed above back */
-      .front {
-        z-index: 2;
-        /* for firefox 31 */
-        transform: rotateY(0deg);
-      }
-
-      /* back, initially hidden pane */
-      .back {
-        transform: rotateY(180deg);
-        background-color: #CCC;
-        height: 100%;
-        position: absolute;
-      }
-
-      @media (min-width: 992px) {
-        .flipper {
-          max-width: none;
-        }
+      .justified {
+        text-align: justify;
       }
     </style>
   </head>
@@ -82,10 +40,21 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
       <a class="navbar-brand js-scroll-trigger" href="#page-top">
         <span class="d-block d-lg-none">Victor Chen</span>
-        <span class="d-none d-lg-block">
-          <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="img/profile.jpg" alt="">
-        </span>
       </a>
+      <span class="flip-container d-none d-lg-block">
+          <div class="flipper flex-grow">
+            <!-- front content -->
+            <div class="front">
+              <a class="navbar-brand js-scroll-trigger" href="#page-top">
+                <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="" alt="">
+              </a>
+            </div>
+            <!-- back content -->
+            <div class="back bg-transparent" style="height: 100%;">
+              <button class="btn m-auto" onclick="alert('Coming soon :)');">Click me</button>
+            </div>
+          </div>
+      </span>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -106,9 +75,6 @@
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="#interests">Interests</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#awards">Awards</a>
-          </li>
         </ul>
       </div>
       <div class="mb-0 text-white">
@@ -126,7 +92,7 @@
           <!--<div class="subheading mb-5">3542 Berry Street · Cheyenne Wells, CO 80810 · (317) 585-8468 ·-->
             <!--<a href="mailto:name@email.com">name@email.com</a>-->
           <!--</div>-->
-          <p class="lead mb-5">I am a current undergrad student at the University of British Columbia with a growing passion for Android App development. I also enjoy creating various calculation and latex formatting tools.</p>
+          <p class="lead mb-5 justified">I am a current undergrad student at the University of British Columbia with a growing passion for Android App development. I also enjoy creating various calculation and latex formatting tools to aid in my school work.</p>
           <div class="social-icons">
             <a target="_blank" href="https://www.linkedin.com/in/victor-chen-494790169/">
               <i class="fab fa-linkedin-in"></i>
@@ -147,72 +113,141 @@
           <!-- Projects -->
 
           <div class="container">
+            <div class="card flex-md-row mb-4 box-shadow h-md-300">
+              <div class="flex-row card-body d-flex flex-fill align-items-center">
+                <!-- Description Div -->
+                <div class="flex-column d-flex w-100  flex-fill align-items-start">
+                  <div class="p-2 row w-100 align-items-center">
+                    <!-- Project Title -->
+                    <strong class="col-sm h3">Boolean Calculator</strong>
+                    <!-- GitHub Link -->
+                    <div class="github-repo row align-items-center" data-repo="chenvictor/boolean-calculator" hidden>
+                      <a class="github-link btn" target="_blank" data-toggle="tooltip" data-placement="top" title="Check out the repo">
+                        <svg height="32" class="octicon octicon-mark-github" viewBox="0 0 16 16" version="1.1" width="32" aria-hidden="true"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path></svg>
+                      </a>
+                      <div class="github-stars " hidden>
+                        <span class="fa fa-star"></span>
+                      </div>
+                      <div class="github-updated ml-2 text-muted"> </div>
+                    </div>
+                  </div>
+                  <div class="p-2 w-100">
+                    <!-- Project Description -->
+                    <p class="justified">
+
+                      Simplify or prove logic statements... with steps! Written in Javascript, the Boolean Calculator applies logical inference and equivalence laws on boolean statements iteratively and exhaustively, just like a human would. In addition to Bootstrap 4, custom
+                      Javascript and CSS are applied to deliver a smooth and responsive user interface.
+
+                    </p>
+                  </div>
+                  <div class="mt-auto p-2 ">
+                    <!-- Link to Project -->
+                    <a class="btn btn-primary btn-sm" target="_blank" href="https://chenvictor.github.io/boolean-calculator/">Check it out</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Course Scheduler -->
+            <div class="card flex-md-row mb-4 box-shadow h-md-300">
+              <div class="flex-row card-body d-flex flex-fill align-items-center">
+                <!-- Description Div -->
+                <div class="flex-column d-flex w-100  flex-fill align-items-start">
+                  <div class="p-2 row w-100 align-items-center">
+                    <!-- Project Title -->
+                    <strong class="col-sm h3">UBC Course Scheduler</strong>
+                    <!-- GitHub Link -->
+                    <div class="github-repo row align-items-center" data-repo="chenvictor/CourseScheduler" hidden>
+                      <a class="github-link btn" target="_blank" data-toggle="tooltip" data-placement="top" title="Check out the repo">
+                        <svg height="32" class="octicon octicon-mark-github" viewBox="0 0 16 16" version="1.1" width="32" aria-hidden="true"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path></svg>
+                      </a>
+                      <div class="github-stars" hidden>
+                        <span class="fa fa-star"></span>
+                      </div>
+                      <div class="github-updated ml-2 text-muted"> </div>
+                    </div>
+                  </div>
+                  <div class="p-2 w-100">
+                    <!-- Project Description -->
+                    <p class="justified">
+
+                      Select courses, generate timetables, and save them to your worklists. Written in Java, the UBC Course Scheduler applies tail-end recursion and a priority worklist approach to generate timetables. A simple web-scraper and client are used to interact with
+                      the UBC SSC interface.
+
+                    </p>
+                  </div>
+                  <div class="mt-auto p-2 ">
+                    <!-- Link to Project -->
+                    <a class="btn btn-primary btn-sm" target="_blank" href="https://github.com/chenvictor/CourseScheduler/releases">Check it out</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
             <div class="row no-gutters">
 
-              <div class="col-lg-6">
-                <div class="flip-container">
-                  <div class="flipper flex-grow">
-                    <!-- front content -->
-                    <div class="front">
-                    <img class="img-fluid" src="img/portfolio-4.jpg" alt="">
-                    </div>
-                    <!-- back content -->
-                    <span class="back caption pl-5 pr-5 pt-2">
-                      <span class="caption-content">
-                        <h2>Workspace</h2>
-                        <p class="mb-0">A yellow workspace with some scissors, pencils, and other objects.</p>
-                      </span>
-                    </span>
-                  </div>
-                </div>
-              </div>
+              <!--Flipper Example-->
+              <!--<div class="col-lg-6">-->
+                <!--<div class="flip-container">-->
+                  <!--<div class="flipper flex-grow">-->
+                    <!--&lt;!&ndash; front content &ndash;&gt;-->
+                    <!--<div class="front">-->
+                    <!--<img class="img-fluid" src="img/portfolio-4.jpg" alt="">-->
+                    <!--</div>-->
+                    <!--&lt;!&ndash; back content &ndash;&gt;-->
+                    <!--<span class="back caption pl-5 pr-5 pt-2">-->
+                      <!--<span class="caption-content">-->
+                        <!--<h2>Workspace</h2>-->
+                        <!--<p class="mb-0">A yellow workspace with some scissors, pencils, and other objects.</p>-->
+                      <!--</span>-->
+                    <!--</span>-->
+                  <!--</div>-->
+                <!--</div>-->
+              <!--</div>-->
 
-              <div class="col-lg-6">
-                <div class="flip-container">
-                  <div class="flipper flex-grow">
-                    <!-- front content -->
-                    <div class="front">
-                      <!--<h2 style="position: absolute; height: 100%; width:100%; text-align: center;">-->
-                      <!--Header that is super long to overflow-->
-                      <!--</h2>-->
-                      <img class="img-fluid" src="img/portfolio-4.jpg" alt="">
-                    </div>
-                    <!-- back content -->
-                    <span class="back caption pl-5 pr-5 pt-2">
-                      <span class="caption-content">
-                        <h2>Workspace</h2>
-                        <p class="mb-0">A yellow workspace with some scissors, pencils, and other objects.</p>
-                      </span>
-                    </span>
-                  </div>
-                </div>
-              </div>
+              <!-- Carousel image example -->
+              <!--<div class="col-lg-6">-->
+                <!--<a class="portfolio-item" href="#" onmouseover="">-->
+                  <!--<span class="caption">-->
+                    <!--<span class="caption-content">-->
+                      <!--<h2>Stationary</h2>-->
+                      <!--<p class="mb-0">A yellow pencil with envelopes on a clean, blue backdrop!</p>-->
+                    <!--</span>-->
+                  <!--</span>-->
+                  <!--<div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel" data-pause="hover">-->
+                    <!--<div class="carousel-inner">-->
+                      <!--<div class="carousel-item active">-->
+                        <!--<img class="d-block w-100" src="img/portfolio-1.jpg" alt="First slide">-->
+                      <!--</div>-->
+                      <!--<div class="carousel-item">-->
+                        <!--<img class="d-block w-100" src="img/portfolio-2.jpg" alt="Second slide">-->
+                      <!--</div>-->
+                      <!--<div class="carousel-item">-->
+                        <!--<img class="d-block w-100" src="img/portfolio-3.jpg" alt="Third slide">-->
+                      <!--</div>-->
+                    <!--</div>-->
+                  <!--</div>-->
+                <!--</a>-->
+              <!--</div>-->
 
-              <div class="col-lg-6">
-                <div class="flip-container">
-                  <div class="flipper flex-grow">
-                    <!-- front content -->
-                    <div class="front">
-                      <!--<h2 style="position: absolute; height: 100%; width:100%; text-align: center;">-->
-                      <!--Header that is super long to overflow-->
-                      <!--</h2>-->
-                      <img class="img-fluid" src="img/portfolio-4.jpg" alt="">
-                    </div>
-                    <!-- back content -->
-                    <span class="back caption pl-5 pr-5 pt-2">
-                      <span class="caption-content">
-                        <h2>Workspace</h2>
-                        <p class="mb-0">A yellow workspace with some scissors, pencils, and other objects.</p>
-                      </span>
-                    </span>
-                  </div>
-                </div>
-              </div>
+              <!-- Image overlay example -->
+              <!--<div class="col-lg-6">-->
+                <!--<a class="portfolio-item" href="#">-->
+                  <!--<span class="caption">-->
+                    <!--<span class="caption-content">-->
+                      <!--<h2>Boolean Calculator</h2>-->
+                      <!--<p class="mb-0">A lean, mean, boolean machine. Made fancy with Bootstrap 4 and custom CSS!</p>-->
+                    <!--</span>-->
+                  <!--</span>-->
+                  <!--<img class="img-fluid" src="img/boolean_calc.png" alt="">-->
+                <!--</a>-->
+              <!--</div>-->
 
 
 
             </div>
           </div>
+          <a class="btn btn-outline-primary ml-3 mt-3" target="_blank" href="https://github.com/chenvictor">See All</a>
 
         </div>
 
@@ -226,10 +261,10 @@
 
           <div class="resume-item d-flex flex-column flex-md-row mb-5">
             <div class="resume-content mr-auto">
-              <h3 class="mb-0">University of Colorado Boulder</h3>
+              <h3 class="mb-0">University of British Columbia</h3>
               <div class="subheading mb-3">Bachelor of Science</div>
-              <div>Computer Science - Web Development Track</div>
-              <p>GPA: 3.23</p>
+              <div>Computer Science</div>
+              <p>2017W Avg: 91.6%</p>
             </div>
             <div class="resume-date text-md-right">
               <span class="text-primary">August 2006 - May 2010</span>
@@ -238,12 +273,11 @@
 
           <div class="resume-item d-flex flex-column flex-md-row">
             <div class="resume-content mr-auto">
-              <h3 class="mb-0">James Buchanan High School</h3>
-              <div class="subheading mb-3">Technology Magnet Program</div>
-              <p>GPA: 3.56</p>
+              <h3 class="mb-0">David Thompson Secondary School</h3>
+              <div class="subheading mb-3">Odyssey Enriched Program</div>
             </div>
             <div class="resume-date text-md-right">
-              <span class="text-primary">August 2002 - May 2006</span>
+              <span class="text-primary">September 2012 - June 2017</span>
             </div>
           </div>
 
@@ -259,6 +293,13 @@
           <div class="subheading mb-3">Programming Languages &amp; Tools</div>
           <ul class="list-inline dev-icons">
             <li class="list-inline-item">
+              <i class="fab fa-java"></i>
+            </li>
+            <li class="list-inline-item">
+              <i class="fab fa-android"></i>
+            </li>
+
+            <li class="list-inline-item">
               <i class="fab fa-html5"></i>
             </li>
             <li class="list-inline-item">
@@ -268,49 +309,26 @@
               <i class="fab fa-js-square"></i>
             </li>
             <li class="list-inline-item">
-              <i class="fab fa-angular"></i>
+              <i class="fab"></i>
             </li>
-            <li class="list-inline-item">
-              <i class="fab fa-react"></i>
-            </li>
-            <li class="list-inline-item">
-              <i class="fab fa-node-js"></i>
-            </li>
-            <li class="list-inline-item">
-              <i class="fab fa-sass"></i>
-            </li>
-            <li class="list-inline-item">
-              <i class="fab fa-less"></i>
-            </li>
-            <li class="list-inline-item">
-              <i class="fab fa-wordpress"></i>
-            </li>
-            <li class="list-inline-item">
-              <i class="fab fa-gulp"></i>
-            </li>
-            <li class="list-inline-item">
-              <i class="fab fa-grunt"></i>
-            </li>
-            <li class="list-inline-item">
-              <i class="fab fa-npm"></i>
-            </li>
+
           </ul>
 
-          <div class="subheading mb-3">Workflow</div>
-          <ul class="fa-ul mb-0">
-            <li>
-              <i class="fa-li fa fa-check"></i>
-              Mobile-First, Responsive Design</li>
-            <li>
-              <i class="fa-li fa fa-check"></i>
-              Cross Browser Testing &amp; Debugging</li>
-            <li>
-              <i class="fa-li fa fa-check"></i>
-              Cross Functional Teams</li>
-            <li>
-              <i class="fa-li fa fa-check"></i>
-              Agile Development &amp; Scrum</li>
-          </ul>
+          <!--<div class="subheading mb-3">Workflow</div>-->
+          <!--<ul class="fa-ul mb-0">-->
+            <!--<li>-->
+              <!--<i class="fa-li fa fa-check"></i>-->
+              <!--Mobile-First, Responsive Design</li>-->
+            <!--<li>-->
+              <!--<i class="fa-li fa fa-check"></i>-->
+              <!--Cross Browser Testing &amp; Debugging</li>-->
+            <!--<li>-->
+              <!--<i class="fa-li fa fa-check"></i>-->
+              <!--Cross Functional Teams</li>-->
+            <!--<li>-->
+              <!--<i class="fa-li fa fa-check"></i>-->
+              <!--Agile Development &amp; Scrum</li>-->
+          <!--</ul>-->
         </div>
       </section>
 
@@ -319,57 +337,60 @@
       <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="interests">
         <div class="my-auto">
           <h2 class="mb-5">Interests</h2>
-          <p>Apart from being a web developer, I enjoy most of my time being outdoors. In the winter, I am an avid skier and novice ice climber. During the warmer months here in Colorado, I enjoy mountain biking, free climbing, and kayaking.</p>
-          <p class="mb-0">When forced indoors, I follow a number of sci-fi and fantasy genre movies and television shows, I am an aspiring chef, and I spend a large amount of my free time exploring the latest technology advancements in the front-end web development world.</p>
+          <p class="justified">Aside from programming, I am an avid fan of foreign languages. I am fluent in conversational French and am currently studying Japanese, attending a weekly Language Table program aimed at gaining experience by interacting with native speakers.</p>
         </div>
       </section>
 
-      <hr class="m-0">
+      <!--<hr class="m-0">-->
 
-      <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="awards">
-        <div class="my-auto">
-          <h2 class="mb-5">Awards &amp; Certifications</h2>
-          <ul class="fa-ul mb-0">
-            <li>
-              <i class="fa-li fa fa-trophy text-warning"></i>
-              Google Analytics Certified Developer</li>
-            <li>
-              <i class="fa-li fa fa-trophy text-warning"></i>
-              Mobile Web Specialist - Google Certification</li>
-            <li>
-              <i class="fa-li fa fa-trophy text-warning"></i>
-              1<sup>st</sup>
-              Place - University of Colorado Boulder - Emerging Tech Competition 2009</li>
-            <li>
-              <i class="fa-li fa fa-trophy text-warning"></i>
-              1<sup>st</sup>
-              Place - University of Colorado Boulder - Adobe Creative Jam 2008 (UI Design Category)</li>
-            <li>
-              <i class="fa-li fa fa-trophy text-warning"></i>
-              2<sup>nd</sup>
-              Place - University of Colorado Boulder - Emerging Tech Competition 2008</li>
-            <li>
-              <i class="fa-li fa fa-trophy text-warning"></i>
-              1<sup>st</sup>
-              Place - James Buchanan High School - Hackathon 2006</li>
-            <li>
-              <i class="fa-li fa fa-trophy text-warning"></i>
-              3<sup>rd</sup>
-              Place - James Buchanan High School - Hackathon 2005</li>
-          </ul>
-        </div>
-      </section>
+      <!--<section class="resume-section p-3 p-lg-5 d-flex flex-column" id="awards">-->
+        <!--<div class="my-auto">-->
+          <!--<h2 class="mb-5">Awards &amp; Certifications</h2>-->
+          <!--<ul class="fa-ul mb-0">-->
+            <!--<li>-->
+              <!--<i class="fa-li fa fa-trophy text-warning"></i>-->
+              <!--Google Analytics Certified Developer</li>-->
+            <!--<li>-->
+              <!--<i class="fa-li fa fa-trophy text-warning"></i>-->
+              <!--Mobile Web Specialist - Google Certification</li>-->
+            <!--<li>-->
+              <!--<i class="fa-li fa fa-trophy text-warning"></i>-->
+              <!--1<sup>st</sup>-->
+              <!--Place - University of Colorado Boulder - Emerging Tech Competition 2009</li>-->
+            <!--<li>-->
+              <!--<i class="fa-li fa fa-trophy text-warning"></i>-->
+              <!--1<sup>st</sup>-->
+              <!--Place - University of Colorado Boulder - Adobe Creative Jam 2008 (UI Design Category)</li>-->
+            <!--<li>-->
+              <!--<i class="fa-li fa fa-trophy text-warning"></i>-->
+              <!--2<sup>nd</sup>-->
+              <!--Place - University of Colorado Boulder - Emerging Tech Competition 2008</li>-->
+            <!--<li>-->
+              <!--<i class="fa-li fa fa-trophy text-warning"></i>-->
+              <!--1<sup>st</sup>-->
+              <!--Place - James Buchanan High School - Hackathon 2006</li>-->
+            <!--<li>-->
+              <!--<i class="fa-li fa fa-trophy text-warning"></i>-->
+              <!--3<sup>rd</sup>-->
+              <!--Place - James Buchanan High School - Hackathon 2005</li>-->
+          <!--</ul>-->
+        <!--</div>-->
+      <!--</section>-->
 
     </div>
 
     <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.bundle.min.js"
+            integrity="sha384-pjaaA8dDz/5BgdFUPX6M/9SUZv4d12SUPF0axWc+VRZkx5xU3daN+lYb49+Ax+Tl"
+            crossorigin="anonymous"></script>
 
     <!-- Plugin JavaScript -->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
 
-    <!-- Custom scripts for this template -->
+    <!-- Custom scripts -->
     <script src="js/resume.min.js"></script>
     <script src="js/gitrepo.js"></script>
 

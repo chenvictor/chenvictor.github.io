@@ -25,14 +25,14 @@
 }
 
 .portfolio-item .caption .caption-content {
-  color: #fff;
+  color: black;
   margin: auto 2rem 2rem;
 }
 
 .portfolio-item .caption .caption-content h2 {
   font-size: 1.5rem;
   text-transform: uppercase;
-  color: white;
+  color: black;
 }
 
 .portfolio-item .caption .caption-content p {
